@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhvdqfefu3hcn"]
+
+[ext_resource type="Script" path="res://Player/PlayerNode.gd" id="1_rolac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pypw"]
+size = Vector2(8.5, 8.5)
+
+[node name="PlayerNode" type="Area2D"]
+script = ExtResource("1_rolac")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0, 1, 0, 1)
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_8pypw")

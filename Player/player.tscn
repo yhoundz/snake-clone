@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dscu25yo8hi5o"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_05i0i"]
+[ext_resource type="PackedScene" uid="uid://bhvdqfefu3hcn" path="res://Player/player_node.tscn" id="2_48yjx"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_05i0i")
+
+[node name="actionTimer" type="Timer" parent="."]
+wait_time = 0.15
+
+[node name="PlayerNodes" type="Node2D" parent="."]
+
+[node name="PlayerNode" parent="PlayerNodes" instance=ExtResource("2_48yjx")]
+position = Vector2(20, 0)
+posX = 15
+posY = 9
+orderNum = 1
+
+[node name="PlayerNode2" parent="PlayerNodes" instance=ExtResource("2_48yjx")]
+position = Vector2(10, 0)
+lead = 1
+posX = 14
+posY = 9
+orderNum = 2
+
+[node name="PlayerNode3" parent="PlayerNodes" instance=ExtResource("2_48yjx")]
+lead = 2
+posX = 13
+posY = 9
+orderNum = 3
+
+[connection signal="timeout" from="actionTimer" to="." method="_on_action_timer_timeout"]
