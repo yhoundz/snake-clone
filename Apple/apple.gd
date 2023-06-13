@@ -5,10 +5,7 @@ class_name apple
 @export var posY: int
 
 func _ready() -> void:
-	pass 
-
-func _process(delta: float) -> void:
-	pass
+	spawn()
 
 func spawn() -> void:
 	posX = randi() % 32
